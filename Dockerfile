@@ -29,7 +29,9 @@ RUN mkdir -p /home/olaris/.config/olaris && chown olaris:olaris /home/olaris/.co
 RUN echo "$OLARISCONF" > /home/olaris/.config/olaris/olaris.toml
 RUN mkdir -p /home/olaris/.config/rclone
 RUN echo "$RCLONECONF" > /home/olaris/.config/rclone/rclone.conf
+RUN mkdir -p ~/.config/olaris
 RUN echo "$OLARISCONF" > ~/.config/olaris/olaris.toml
+RUN mkdir -p ~/.config/rclone
 RUN echo "$RCLONECONF" > ~/.config/rclone/rclone.conf
 VOLUME /home/olaris/.config/olaris
 EXPOSE 8080
