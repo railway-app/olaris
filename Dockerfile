@@ -27,6 +27,7 @@ COPY --from=build /go/src/gitlab.com/olaris/olaris-server/build/olaris /opt/olar
 COPY ./docker/entrypoint.sh /
 RUN mkdir -p /home/olaris/.config/olaris && chown olaris:olaris /home/olaris/.config/olaris
 RUN echo "$OLARISCONF" > /home/olaris/.config/olaris/olaris.toml
+RUN mkdir -p /home/olaris/.config/rclone
 RUN echo "$RCLONECONF" > /home/olaris/.config/rclone/rclone.conf
 RUN echo "$OLARISCONF" > ~/.config/olaris/olaris.toml
 RUN echo "$RCLONECONF" > ~/.config/rclone/rclone.conf
