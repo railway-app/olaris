@@ -18,6 +18,7 @@ FROM debian:stretch AS release
 RUN apt-get -y update && \
     apt-get install -y --no-install-recommends sudo ca-certificates && \
     apt-get autoremove && apt-get clean
+    apt-get install rclone
 
 RUN useradd --create-home -U olaris
 
@@ -25,6 +26,7 @@ COPY --from=build /go/src/gitlab.com/olaris/olaris-server/build/olaris /opt/olar
 COPY ./docker/entrypoint.sh /
 RUN mkdir -p /home/olaris/.config/olaris && chown olaris:olaris /home/olaris/.config/olaris
 RUN echo "$OLARISCONF" > /home/olaris/.config/olaris/olaris.toml
+RUN echo "$RCLONECONF" > /home/olaris/.config/rclone/rclone.conf
 VOLUME /home/olaris/.config/olaris
 EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh", "/opt/olaris/olaris"]
