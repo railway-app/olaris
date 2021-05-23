@@ -21,6 +21,7 @@ We don't want to collect metadata, we don't want to sell metadata your data is y
 
 ### Singular Focus: Video.
 Our sole focus is on video and video alone, anything that does not meet this requirement will not be considered. This means for example we will never add music support due to different approach that would be required throughout the application. 
+hi
 
 ### Open-source
 Everything we build should be open-source. We feel strongly that more can be achieved with free open-source software. That's why were are aiming to be and to remain open-source instead of open-core where certain features are locked behind a paywall.
